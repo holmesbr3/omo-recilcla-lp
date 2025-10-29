@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMO Recicla Óleo - Cuidar da casa é também cuidar do planeta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066CC;
+            --ocean-blue: #003366;
+            --eco-green: #4CAF50;
+            --sun-yellow: #FFC107;
+            --action-red: #F44336;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            transition: height 0.3s ease;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--ocean-blue);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://z-cdn-media.chatglm.cn/files/d5650ab9-d880-4076-975b-5508d130acfb_IMG-20251026-WA0076.jpg?auth_key=1793065772-5e4691e7cc6e44fda25fb2449255c841-0-391ecf882bbfda53a8fd0c041faa9922');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--eco-green);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #3d8b40;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--ocean-blue);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--ocean-blue);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--eco-green);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-gray);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+        }
+        
+        .about-text h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* How It Works Section */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: var(--ocean-blue);
+        }
+        
+        /* Event Section */
+        .event {
+            background-color: var(--light-gray);
+        }
+        
+        .event-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .event-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .event-info {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .event-info h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .event-details {
+            margin-bottom: 30px;
+        }
+        
+        .event-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .event-details i {
+            margin-right: 10px;
+            color: var(--eco-green);
+            width: 20px;
+        }
+        
+        .event-zones {
+            margin-top: 30px;
+        }
+        
+        .event-zones h4 {
+            color: var(--ocean-blue);
+            margin-bottom: 15px;
+        }
+        
+        .zones-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .zone-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .zone-item i {
+            margin-right: 10px;
+            color: var(--eco-green);
+        }
+        
+        /* Products Section */
+        .products-showcase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 60px;
+        }
+        
+        .products-showcase img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .products-description {
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .products-description h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .product-item {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-item h4 {
+            color: var(--ocean-blue);
+            margin-bottom: 10px;
+        }
+        
+        .food-gifts {
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .food-gifts img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Partnership Section */
+        .partnership {
+            background-color: var(--light-gray);
+        }
+        
+        .partnership-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .influencer-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .influencer-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .influencer-info {
+            padding: 30px;
+        }
+        
+        .influencer-info h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 15px;
+        }
+        
+        .influencer-info p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            color: var(--ocean-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--eco-green);
+            color: var(--white);
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--ocean-blue);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        /* Impact Section */
+        .impact {
+            background-color: var(--light-gray);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--eco-green);
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--ocean-blue);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--dark-gray);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://z-cdn-media.chatglm.cn/files/d5650ab9-d880-4076-975b-5508d130acfb_IMG-20251026-WA0076.jpg?auth_key=1793065772-5e4691e7cc6e44fda25fb2449255c841-0-391ecf882bbfda53a8fd0c041faa9922');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--ocean-blue);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--eco-green);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--eco-green);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .about-content,
+            .partnership-content {
+                grid-template-columns: 1fr;
+            }
+
+            /* Specific responsive styles for the event section */
+            .event-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .zones-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn-outline {
+                display: block;
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Further adjustments for mobile */
+            .event-info {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo img {
+                height: 40px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content {
+                padding: 20px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/db8bd11a-b71b-40c7-bdb7-a6d5046988ac_IMG-20251026-WA0080.jpg?auth_key=1793065772-c18ae5d15e414788843127421a760645-0-ff1155beb85b1895c1c41ae0626d84cf" alt="Logo OMO Recicla Óleo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#how-it-works">Como Funciona</a></li>
+                    <li><a href="#event">Evento</a></li>
+                    <li><a href="#products">Brindes</a></li>
+                    <li><a href="#partnership">Parcerias</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#impact">Impacto</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Cuidar da casa é também cuidar do planeta</h1>
+                <p>Transforme óleo usado em recursos valiosos e ajude a proteger nossos recursos hídricos</p>
+                <div class="hero-buttons">
+                    <a href="#how-it-works" class="btn">Como Participar</a>
+                    <a href="#event" class="btn btn-outline">Evento de Lançamento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre o Projeto</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Transformando Resíduos em Recursos</h3>
+                    <p>O projeto OMO Recicla Óleo nasceu da necessidade de resolver um problema ambiental crítico: o descarte inadequado de óleo de cozinha. <strong>Apenas 1 litro de óleo contamina 25.000 litros de água</strong>, criando uma barreira que impede a oxigenação e prejudica a vida aquática.</p>
+                    <p>Nossa solução vai além de um simples serviço de coleta. Em parceria com a <strong>EcoDrop</strong>, criamos um ecossistema que transforma óleo em biodiesel, sabão ecológico e outros produtos sustentáveis, gerando valor para a comunidade.</p>
+                    <p>Alinhado com o <strong>ODS 12</strong> da ONU, o projeto tem um modelo de negócio viável, com retorno financeiro esperado em <strong>6-8 meses</strong>, provando que sustentabilidade e lucro podem caminhar juntos.</p>
+                    <a href="#how-it-works" class="btn">Saiba Mais</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/d5650ab9-d880-4076-975b-5508d130acfb_IMG-20251026-WA0076.jpg?auth_key=1793065772-5e4691e7cc6e44fda25fb2449255c841-0-391ecf882bbfda53a8fd0c041faa9922" alt="Estande do Evento OMO Recicla Óleo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>Como Funciona</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Encontre um Ponto</h3>
+                    <p>Localize o ponto de coleta EcoDrop mais próximo em supermercados e mercadinhos parceiros.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3>Armazene o Óleo</h3>
+                    <p>Guarde o óleo usado em uma garrafa PET bem fechada até levar para o ponto de coleta.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-hand-holding-water"></i>
+                    </div>
+                    <h3>Descarte Conscientemente</h3>
+                    <p>Entregue seu óleo e receba informações sobre como ele será transformado.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Transformação</h3>
+                    <p>O óleo se torna biodiesel, sabão ecológico e outros produtos, gerando valor e protegendo o meio ambiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section id="event" class="event">
+        <div class="container">
+            <div class="section-title">
+                <h2>Evento de Lançamento</h2>
+            </div>
+            <div class="event-content">
+                <div class="event-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/d5650ab9-d880-4076-975b-5508d130acfb_IMG-20251026-WA0076.jpg?auth_key=1793065772-5e4691e7cc6e44fda25fb2449255c841-0-391ecf882bbfda53a8fd0c041faa9922" alt="Estande do Evento na Praia de Santos">
+                </div>
+                <div class="event-info">
+                    <h3>Uma Experiência Imersiva e Gratuita</h3>
+                    <p>O evento de lançamento será na <strong>Praia de Santos, São Paulo</strong>, um local símbolo da conexão entre ação humana e natureza. A entrada é <strong>gratuita</strong> para garantir máxima acessibilidade.</p>
+                    
+                    <div class="event-details">
+                        <p><i class="fas fa-calendar-alt"></i> <strong>Data:</strong> 15 de julho de 2023</p>
+                        <p><i class="fas fa-clock"></i> <strong>Horário:</strong> 9h às 18h</p>
+                        <p><i class="fas fa-map-pin"></i> <strong>Local:</strong> Praia de Santos, SP</p>
+                        <p><i class="fas fa-star"></i> <strong>Convidado:</strong> Gabriel Medina</p>
+                    </div>
+                    
+                    <div class="event-zones">
+                        <h4>Zonas Temáticas</h4>
+                        <div class="zones-list">
+                            <div class="zone-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Acolhimento</span>
+                            </div>
+                            <div class="zone-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Educativa</span>
+                            </div>
+                            <div class="zone-item">
+                                <i class="fas fa-oil-can"></i>
+                                <span>Coleta</span>
+                            </div>
+                            <div class="zone-item">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Experiência</span>
+                            </div>
+                            <div class="zone-item">
+                                <i class="fas fa-gift"></i>
+                                <span>Brindes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#products" class="btn">Confira os Brindes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Brindes Ecológicos</h2>
+            </div>
+            <div class="products-showcase">
+                <img src="https://z-cdn-media.chatglm.cn/files/52598631-78a2-4ebb-bef1-9b6bf03ec5c9_IMG-20251026-WA0078.jpg?auth_key=1793065772-c31a928ff1a14b88a17f35c79d0defa3-0-9fe9afc5082ef4fae30d5cb071120c91" alt="Brindes do Totem OMO Recicla">
+                <div class="products-description">
+                    <h3>Brindes que Fazem a Diferença</h3>
+                    <p>Nossos brindes são mais do que presentes; são ferramentas de comunicação que reforçam mensagens de sustentabilidade e criam uma conexão emocional com o projeto.</p>
+                    <div class="products-grid">
+                        <div class="product-item">
+                            <h4>Sacola Reutilizável</h4>
+                            <p>Para quem leva óleo</p>
+                        </div>
+                        <div class="product-item">
+                            <h4>Copo Reutilizável</h4>
+                            <p>Para quem assiste palestras</p>
+                        </div>
+                        <div class="product-item">
+                            <h4>Chaveiro Ecológico</h4>
+                            <p>Para crianças nas oficinas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="food-gifts">
+                <h3>Brindes Alimentícios</h3>
+                <img src="https://z-cdn-media.chatglm.cn/files/a82878b1-4833-4b8a-9cc9-26eec683aa26_IMG-20251026-WA0077.jpg?auth_key=1793065772-c6368d041f164d91b49b35d4add62679-0-1d54d00bd22db79581655621c31e7d9b" alt="Brindes Alimentícios OMO Recicla">
+                <p>Além dos brindes do totem, oferecemos opções refrescantes como picolé ecológico e água filtrada para garantir o bem-estar dos nossos visitantes durante o evento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section id="partnership" class="partnership">
+        <div class="container">
+            <div class="section-title">
+                <h2>Parcerias Estratégicas</h2>
+            </div>
+            <div class="partnership-content">
+                <div class="influencer-card">
+                    <div class="influencer-image">
+                        <img src="https://z-cdn-media.chatglm.cn/files/a3b16f04-5977-4557-be8a-13c84ca8ed69_IMG-20251011-WA0051%281%29.jpg?auth_key=1793065772-8608b896a6de48d881ba85655c1f0647-0-f20690c05ab3ecd94fc7f7ec76e51bda" alt="Parceria Gabriel Medina">
+                    </div>
+                    <div class="influencer-info">
+                        <h3>Gabriel Medina</h3>
+                        <p>Surfista olímpico e embaixador do projeto. Sua conexão natural com o oceano torna a mensagem de proteção hídrica ainda mais poderosa.</p>
+                        <p>Sua participação inspira milhões de seguidores a adotar hábitos mais sustentáveis.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/gabrielmedina" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="partnership-text">
+                    <h3>Colaboração que Transforma</h3>
+                    <p>Além de Gabriel, o projeto conta com diversas parcerias estratégicas:</p>
+                    <ul>
+                        <li><strong>EcoDrop:</strong> Parceiro principal na logística de coleta.</li>
+                        <li>Ativistas e criadores de conteúdo de sustentabilidade.</li>
+                        <li>Micro-influenciadores locais engajados.</li>
+                        <li>ONGs e instituições ambientais.</li>
+                        <li>Prefeituras e governos locais.</li>
+                        <li>Universidades e instituições de ensino.</li>
+                    </ul>
+                    <p>Siga nossas redes: <strong>@omorecicla</strong></p>
+                    <a href="#faq" class="btn">Tire suas Dúvidas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Como surgiu a ideia do projeto?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Identificamos que o óleo contamina a água e que faltava acessibilidade à coleta. Transformamos esse problema em uma oportunidade de economia circular com a força e o alcance da marca OMO.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Por que a Praia de Santos para o evento?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>É um símbolo ambiental com um público engajado. A escolha reforça nossa mensagem central sobre a proteção dos recursos hídricos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        O sabonete é realmente feito de óleo reciclado?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Ele é biodegradável e ecológico. É a prova tangível de que a reciclagem funciona e que resíduos podem se transformar em produtos valiosos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Como o projeto é financeiramente viável?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Através da venda dos produtos derivados (biodiesel, sabão), parcerias com marcas e o investimento da OMO. O retorno financeiro é esperado em 6-8 meses, tornando o projeto autossustentável.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Como posso participar do projeto?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode participar do evento de lançamento, levar seu óleo usado aos pontos de coleta EcoDrop, seguir nosso Instagram @omorecicla, compartilhar o projeto e comprar os produtos derivados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Impacto e Resultados</h2>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="stat-number">25.000L</div>
+                    <div class="stat-label">Litros de água protegidos por litro de óleo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Redução de emissões com biodiesel</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">10.000+</div>
+                    <div class="stat-label">Pessoas educadas sobre sustentabilidade</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <div class="stat-number">5.000L</div>
+                    <div class="stat-label">Meta mensal de óleo reciclado</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <h2>Participe Você Também</h2>
+            <p>Junte-se a nós nesta jornada de transformação. Pequenas ações individuais, quando multiplicadas, geram impacto coletivo significativo para o planeta.</p>
+            <a href="#event" class="btn">Venha para o Evento</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>OMO Recicla Óleo</h3>
+                    <p>Transformando resíduos em recursos e protegendo nossos recursos hídricos.</p>
+                    <p>"Cuidar da casa é também cuidar do planeta."</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/omorecicla" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Úteis</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Sobre o Projeto</a></li>
+                        <li><a href="#how-it-works">Como Funciona</a></li>
+                        <li><a href="#event">Evento de Lançamento</a></li>
+                        <li><a href="#faq">Perguntas Frequentes</a></li>
+                        <li><a href="#impact">Impacto e Resultados</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@omorecicla.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo, SP</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Receba atualizações e dicas de sustentabilidade:</p>
+                    <form>
+                        <input type="email" placeholder="Seu e-mail" style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px;">
+                        <button type="submit" class="btn" style="width: 100%;">Inscrever-se</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 OMO Recicla Óleo. Todos os direitos reservados. | Faculdade Ítalo Brasileiro | Projeto de Marketing</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after clicking a link
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'var(--white)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Close other open answers
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question) {
+                        otherQuestion.classList.remove('active');
+                        otherQuestion.nextElementSibling.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current answer
+                question.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    const suffix = element.textContent.includes('L') ? 'L' : (element.textContent.includes('+') ? '+' : '%');
+                    element.textContent = Math.ceil(start) + suffix;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    const suffix = element.textContent.includes('L') ? 'L' : (element.textContent.includes('+') ? '+' : '%');
+                    element.textContent = target + suffix;
+                }
+            }
+            
+            updateCounter();
+        }
+
+        // Set up counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const number = parseInt(text.replace(/\D/g, ''));
+                        animateCounter(stat, number);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-container');
+        if (statsSection) {
+            statsSection.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
